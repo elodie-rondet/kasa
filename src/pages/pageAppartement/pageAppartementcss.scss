@@ -1,0 +1,90 @@
+@import '../../sass/main.scss';
+
+.appartement{
+    &_content{
+        @include align(row, space-between, flex-start);
+        color: $color-secondary;
+        width: 95%;
+        margin: 0 auto;
+        @media screen and (max-width: 650px){
+            @include align(column, space-between, flex-start);   
+            gap: 10px;   
+        }
+        &_infos{
+            margin-top: 2%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            button{
+                display: inline;
+                padding: 5px 15px;
+                margin-right: 10px;
+                cursor: pointer;
+                border-radius: 10px;
+                border: none;
+                color: $color-primary;
+                background-color: $color-secondary;
+                &:hover{
+                    box-shadow: 0 2px 8px rgb(0, 0, 0);
+                }
+            }
+            div{
+                flex-wrap: wrap;
+                gap: 10px;  
+            }
+        }
+        &_host{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            @media screen and (max-width: 650px){
+                width: 100%;
+                @include align(row-reverse, space-between, center);     
+            }
+            div{
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                gap: 0 10px;
+                @media screen and (max-width: 500px){
+                    gap: 0 5px;   
+                }
+            }
+            &_name{
+                align-self: center;
+                flex-direction: column;
+            }
+            img{
+                width: 64px;
+                height: 64px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+            &_stars{
+                display: flex;
+                gap: 10px;
+                img{
+                    width: 30px;
+                    height: 30px;
+                    @media screen and (max-width: 650px){
+                        width: 20px;
+                        height: 20px;  
+                    }
+                }
+            }
+        }
+    }
+    &_list{
+        display: flex;
+        padding-left: 2%;
+        padding-top: 2%;
+        padding-bottom: 4%;
+        gap: 50px;
+        &_item{
+        width:50%;
+        }  
+    }
+}

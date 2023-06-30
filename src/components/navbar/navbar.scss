@@ -1,0 +1,20 @@
+@import '../../sass/main.scss';
+
+.nav_list{
+    display: flex;
+    gap: 50px;
+    color: $color-secondary;
+    font-size: 18px;
+    @media screen and (max-width: 700px){
+        gap: 20px;
+    }
+    &_item{
+        color: $color-secondary;
+        &_active{
+            position: relative;
+            color: $color-secondary;
+            transition: all 0.2s ease-in-out;
+            
+        }
+    }
+}
