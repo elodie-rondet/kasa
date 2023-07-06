@@ -10,9 +10,11 @@
     height: 223px;
     padding: 20px;
     max-width: 95%;
-    margin: 43px auto;
+    margin: 43px;
+    @include center (auto,auto);
     @media screen and (max-width: 550px){
-        margin: 20px auto;
+        @include center (auto,auto);
+        margin: 20px;
         height: 120px;
     }
     &_about{
@@ -22,8 +24,7 @@
         height: 223px;
         max-width: 95%;
         margin-top:43px;
-		margin-left:auto;
-		margin-right:auto;
+		@include center (auto,auto);
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../images/banniere_cover.png');
         background-position: center;
         background-size: cover;

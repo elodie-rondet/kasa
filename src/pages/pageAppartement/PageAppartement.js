@@ -15,10 +15,10 @@ export default function PageAppartement() {
 	const [imageSlider, setImageSlider] = useState([]);
 
 	const idAppartement = useParams('id').id;
-	const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
+	const dataCurrentAppartement = datas.findIndex(data => data.id === idAppartement);
 	
 	useEffect(() => {
-		const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
+		const dataCurrentAppartement = datas.findIndex(data => data.id === idAppartement);
 		setImageSlider(dataCurrentAppartement[0].pictures);
 	}, [idAppartement]);
 
@@ -54,7 +54,7 @@ export default function PageAppartement() {
 						</div>
 							
 						<div className="appartement_content_host_stars">
-							{[...Array(5)].map((star, index) => {
+							{[...Array(5)].map((index) => {
 								const ratingValue = index + 1;
 								return (
 									<img key={index} src={ratingValue <= rating ? activeStar : inactiveStar} alt="star" />

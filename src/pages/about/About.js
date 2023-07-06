@@ -6,7 +6,7 @@ import Footer from '../../components/footer/Footer';
 
 export default function About() {
 
-	const aboutDatas = [
+	const about = [
 		{
 			"id": "1",
 			"title": "Fiabilité",
@@ -34,10 +34,10 @@ export default function About() {
 			<Header />
 			<Banner />
 			<main className='about_main'>
-				{aboutDatas.map(data => {
+				{about.map(data => {
 					return (
 						<div key={data.id} className="about_main_collapse">
-							<Collapse style={{margin:'30px 0'}}  title={data.title} content={data.content} />
+							<Collapse title={data.title} content={data.content} />
 						</div>
 					)}
 				)}

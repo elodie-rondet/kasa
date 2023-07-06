@@ -5,7 +5,8 @@
         @include align(row, space-between, flex-start);
         color: $color-secondary;
         width: 95%;
-        margin: 0 auto;
+        margin: 0;
+        @include center (auto,auto);
         @media screen and (max-width: 650px){
             @include align(column, space-between, flex-start);   
             gap: 10px;   
