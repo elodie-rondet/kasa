@@ -15,14 +15,14 @@ export default function PageAppartement() {
 	const [imageSlider, setImageSlider] = useState([]);
 
 	const idAppartement = useParams('id').id;
-	const dataCurrentAppartement = datas.findIndex(data => data.id === idAppartement);
+	const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
 	
 	useEffect(() => {
-		const dataCurrentAppartement = datas.findIndex(data => data.id === idAppartement);
+		const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
 		setImageSlider(dataCurrentAppartement[0].pictures);
 	}, [idAppartement]);
 
-	const name = dataCurrentAppartement[0].host.name; 
+	const name = dataCurrentAppartement[0].host.name.split(' '); 
 	const rating = dataCurrentAppartement[0].rating;
 	const description  = dataCurrentAppartement[0].description;
 	const equipments = dataCurrentAppartement[0].equipments;
@@ -37,9 +37,9 @@ export default function PageAppartement() {
 						<h1>{dataCurrentAppartement[0].title}</h1>
 						<p>{dataCurrentAppartement[0].location}</p>
 						<div>
-							{dataCurrentAppartement[0].tags.map((tag, index) => {
+							{dataCurrentAppartement[0].tags.map((tag) => {
 								return (
-									<button key={index}>{tag}</button>
+									<button key={tag}>{tag}</button>
 								)
 							})}
 						</div>

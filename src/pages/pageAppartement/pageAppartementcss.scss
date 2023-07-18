@@ -27,6 +27,11 @@
                 border: none;
                 color: $color-primary;
                 background-color: $color-secondary;
+                font-size: 14px;
+                font-family: Montserrat;
+                font-weight: 500;
+                line-height: 19.96px;
+                word-wrap: break-word;
                 &:hover{
                     box-shadow: 0 2px 8px rgb(0, 0, 0);
                 }
@@ -34,6 +39,22 @@
             div{
                 flex-wrap: wrap;
                 gap: 10px;  
+            }
+            h1 {
+                color: $color-secondary;
+                font-size: 36px;
+                font-family: Montserrat;
+                font-weight: 500;
+                line-height: 51.34px;
+                word-wrap: break-word;
+            }
+            p {
+                color: $color-secondary;
+                font-size: 18px;
+                font-family: Montserrat;
+                font-weight: 500;
+                line-height: 25.67px;
+                word-wrap: break-word
             }
         }
         &_host{
@@ -49,6 +70,12 @@
                 justify-content: flex-end;
                 align-items: flex-end;
                 gap: 0 10px;
+                color: $color-secondary;
+                font-size: 18px;
+                font-family: Montserrat;
+                font-weight: 500;
+                line-height: 25.67px;
+                word-wrap: break-word;
                 @media screen and (max-width: 500px){
                     gap: 0 5px;   
                 }

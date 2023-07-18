@@ -2,7 +2,8 @@
 
 .error{
     max-width: 95%;
-    margin: 0 auto;
+    margin: 0;
+    @include center(auto, auto);
     padding-bottom: 40px;
     color: $color-secondary;
     &_infos{

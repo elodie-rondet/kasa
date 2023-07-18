@@ -12,7 +12,11 @@
         color: $color-primary;
         border-radius: 10px;
         font-weight: 500;
-        font-size: clamp(13px, 2vw, 18px);
+        font-size: 18px;
+        font-family: Montserrat;
+        font-weight: 400;
+        line-height: 25.67px;
+        word-wrap: break-word;
         padding: 10px 15px;
         cursor: pointer;
         .arrow{

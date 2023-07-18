@@ -8,13 +8,13 @@
     cursor: pointer;
     overflow: hidden;
     transition : box-shadow 0.2s ease-in-out;
-    @media screen and (max-width: 1230px){
+    @media all and (max-width: 1230px){
         width: 47%;   
     }
-    @media screen and (max-width: 900px){
+    @media all and (max-width: 900px){
         width: 100%;    
     }
-    @media screen and (max-width: 500px){
+    @media all and (max-width: 500px){
         height: 200px;
     }
     &::after{
@@ -48,7 +48,12 @@
         left: 20px;
         right: 20px;
         font-weight: 500;
-        font-size: clamp(12px, 3vw, 18px);
         color: $color-primary;
+        width:152px;
+        font-size: 18px;
+        font-family: Montserrat;
+        line-height: 25.67px;
+        word-wrap: break-word;
+        margin-bottom: 20px;
     }
 }
