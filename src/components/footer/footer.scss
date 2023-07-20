@@ -11,7 +11,19 @@
     font-weight: 500;
     line-height: 34.22px;
     word-wrap: break-word;
+    @media all and (max-width: 650px){
+        gap: 5px;
+        font-size: 12px;
+        line-height: 17.11px;
+        padding-right: 120px;
+        padding-left: 120px;
+    }
     &_copyright{
         color: $color-primary;
+        @media all and (max-width: 650px){
+            padding-right: 15%;
+            padding-left: 15%;
+            text-align: center;
+        }
     }
 }

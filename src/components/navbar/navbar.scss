@@ -18,6 +18,11 @@
         line-height: 34.22px;
         word-wrap: break-word;
         text-decoration: none;
+        @media all and (max-width: 650px){
+            font-size: 14px;
+            line-height: 19.96px;
+            text-transform: uppercase;
+        }
         &_active{
             position: relative;           
             color: $color-secondary;
@@ -29,6 +34,11 @@
             line-height: 34.22px;
             word-wrap: break-word;
             text-decoration: none;
+            @media all and (max-width: 650px){
+                font-size: 14px;
+                line-height: 19.96px;
+                text-transform: uppercase;
+            }
             
         }
     }

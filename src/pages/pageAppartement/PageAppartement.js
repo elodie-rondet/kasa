@@ -1,13 +1,14 @@
 import './pageAppartementcss.scss'
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useParams, user } from "react-router-dom";
 import datas from '../../data/datas'
 import Header from "../../components/header/Header";
 import Carousel from "../../components/carousel/Carousel"
 import Footer from "../../components/footer/Footer";
 import Collapse from '../../components/collapse/Collapse';
-import inactiveStar from '../../images/etoile_inactive.png';
-import activeStar from '../../images/etoile_active.png';
+import { useLocation } from 'react-router-dom';
+import Rating from "../../components/rating/Rating";
+
 
 
 export default function PageAppartement() {
@@ -16,12 +17,13 @@ export default function PageAppartement() {
 
 	const idAppartement = useParams('id').id;
 	const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
-	
+	if (dataCurrentAppartement.length === 0) {
+		window.location.pathname = "/404";
+	}
 	useEffect(() => {
 		const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
 		setImageSlider(dataCurrentAppartement[0].pictures);
 	}, [idAppartement]);
-
 	const name = dataCurrentAppartement[0].host.name.split(' '); 
 	const rating = dataCurrentAppartement[0].rating;
 	const description  = dataCurrentAppartement[0].description;
@@ -54,12 +56,7 @@ export default function PageAppartement() {
 						</div>
 							
 						<div className="appartement_content_host_stars">
-							{[...Array(5)].map((index) => {
-								const ratingValue = index + 1;
-								return (
-									<img key={index} src={ratingValue <= rating ? activeStar : inactiveStar} alt="star" />
-								)
-							})}
+						<Rating star={dataCurrentAppartement[0].rating} />
 						</div>
 					</div>
 				</div>
@@ -76,3 +73,4 @@ export default function PageAppartement() {
 		</>
 	)
 }
+

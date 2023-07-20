@@ -6,6 +6,7 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin: 0 auto;
+    
     &_title{
         @include align(row, space-between, center);
         background-color: $color-secondary;
@@ -19,9 +20,15 @@
         word-wrap: break-word;
         padding: 10px 15px;
         cursor: pointer;
+        @media all and (max-width: 1230px){
+            font-size: 13px;   
+        }
+        @media all and (max-width: 650px){
+            height: 30px;  
+        }
         .arrow{
             transition: all 0.2s ease-in-out;
-            @media screen and (max-width: 1230px){
+            @media all and (max-width: 1230px){
                 width: 12px;     
             }
         }
@@ -35,11 +42,32 @@
     &_content{
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;  
         gap: 5px;
         letter-spacing: 1px;
         visibility: visible;
         opacity: 1;
-        height: auto;
+        height: 200px;
+        padding: 10px;
+        letter-spacing: 1px;
+        font-size: clamp(12px, 2vw, 16px);
+        color: $color-secondary;
+        transition: visibility 0.5s ease-in-out,
+                    opacity 0.5s ease-in-out,
+                    height 0.2s ease-in-out;
+        @media all and (max-width: 1024px){ 
+        height: 180px;   
+        flex-wrap: wrap;        
+        }  
+    }
+    &_content_apropos{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        letter-spacing: 1px;
+        visibility: visible;
+        opacity: 1;
+        height: 100px;
         padding: 10px;
         letter-spacing: 1px;
         font-size: clamp(12px, 2vw, 16px);

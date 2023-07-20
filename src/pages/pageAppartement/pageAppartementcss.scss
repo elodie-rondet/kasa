@@ -7,7 +7,7 @@
         width: 95%;
         margin: 0;
         @include center (auto,auto);
-        @media screen and (max-width: 650px){
+        @media all and (max-width: 650px){
             @include align(column, space-between, flex-start);   
             gap: 10px;   
         }
@@ -32,6 +32,12 @@
                 font-weight: 500;
                 line-height: 19.96px;
                 word-wrap: break-word;
+                @media all and (max-width: 650px){
+                    font-size: 10px;
+                    width: 84px; 
+                    height: 18px; 
+                    line-height: 0px;
+                }
                 &:hover{
                     box-shadow: 0 2px 8px rgb(0, 0, 0);
                 }
@@ -47,6 +53,10 @@
                 font-weight: 500;
                 line-height: 51.34px;
                 word-wrap: break-word;
+                @media all and (max-width: 650px){
+                    font-size: 18px;
+                    line-height: 25.67px;
+                }
             }
             p {
                 color: $color-secondary;
@@ -54,7 +64,11 @@
                 font-family: Montserrat;
                 font-weight: 500;
                 line-height: 25.67px;
-                word-wrap: break-word
+                word-wrap: break-word;
+                @media all and (max-width: 650px){
+                    font-size: 14px;
+                    line-height: 19.96px;
+                }
             }
         }
         &_host{
@@ -77,7 +91,9 @@
                 line-height: 25.67px;
                 word-wrap: break-word;
                 @media screen and (max-width: 500px){
-                    gap: 0 5px;   
+                    gap: 0 5px;  
+                    font-size: 12px; 
+                    line-height: 17.11px;
                 }
             }
             &_name{
@@ -113,6 +129,19 @@
         gap: 50px;
         &_item{
         width:50%;
+        @media all and (max-width: 650px){ 
+            display: block;  
+            width:100%;
+            padding-bottom: 4%;
+            padding-top: 2%;
+        }  
+        }
+        @media all and (max-width: 650px){ 
+            display: block;  
+            width:100%;
+            padding-bottom: 4%;
+            padding-top: 2%;
+            padding-right: 2%;
         }  
     }
 }

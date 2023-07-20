@@ -40,6 +40,10 @@
         font-weight: 500;
         line-height: 68.45px;
         word-wrap: break-word;
+        @media all and (max-width: 550px){
+            font-size: 24px;
+            line-height: 24px;
+        }
     }
 }
 

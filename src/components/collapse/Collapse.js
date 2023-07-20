@@ -1,10 +1,12 @@
 import './collapse.scss'
 import arrow from '../../images/arrow.png';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function Collapse({title, content}) {
 
     const [toggle, setToggle] = useState(false);
+    const location = useLocation();
 
     return (
         <>
@@ -17,7 +19,7 @@ export default function Collapse({title, content}) {
                         alt="show content" 
                     />
                 </h3>
-                <div className={toggle ? 'collapse_content' : 'collapse_content_hidden'}>
+                <div className={toggle && location.pathname !== '/Apropos' ? 'collapse_content' : location.pathname === '/Apropos' && toggle ? 'collapse_content_apropos' : 'collapse_content_hidden'}>
                     {Array.isArray(content) ? content.map((item, index) => {
                         return (
                             <p key={index}>{item}</p>

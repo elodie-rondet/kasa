@@ -8,13 +8,13 @@ export default function Navbar() {
     return (
         <nav className='nav'>
             <ul className='nav_list'>
-                <li className={currentRoute === '/Accueil/' ? 'nav_list_item_active' : 'nav_list_item'}>
-                    <Link  to='/Accueil/'>
+                <li className={currentRoute === '/accueil/' ? 'nav_list_item_active' : 'nav_list_item'}>
+                    <Link  to='/accueil/'>
                         Accueil
                     </Link>
                 </li>
-                <li className={currentRoute === '/Apropos' ? 'nav_list_item_active' : 'nav_list_item'}>
-                    <Link  to='/Apropos'>
+                <li className={currentRoute === '/apropos' ? 'nav_list_item_active' : 'nav_list_item'}>
+                    <Link  to='/apropos'>
                         A propos
                     </Link>
                 </li>
