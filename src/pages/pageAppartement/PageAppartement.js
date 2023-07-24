@@ -1,6 +1,5 @@
 import './pageAppartementcss.scss'
-import { useEffect, useState } from "react"
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import datas from '../../data/datas'
 import Header from "../../components/header/Header";
 import Carousel from "../../components/carousel/Carousel"
@@ -13,7 +12,7 @@ import '../error/error.scss'
 
 
 export default function PageAppartement() {
-	
+
 	const idAppartement = useParams('id').id;
 	const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
 
