@@ -1,38 +1,42 @@
 import './pageAppartementcss.scss'
-import { useEffect, useState } from "react"
-import { useParams, user } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import datas from '../../data/datas'
 import Header from "../../components/header/Header";
 import Carousel from "../../components/carousel/Carousel"
 import Footer from "../../components/footer/Footer";
 import Collapse from '../../components/collapse/Collapse';
-import { useLocation } from 'react-router-dom';
 import Rating from "../../components/rating/Rating";
+import { Link } from 'react-router-dom'
+import '../error/error.scss'
 
 
 
 export default function PageAppartement() {
-	
-	const [imageSlider, setImageSlider] = useState([]);
 
 	const idAppartement = useParams('id').id;
 	const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
+
 	if (dataCurrentAppartement.length === 0) {
-		window.location.pathname = "/404";
+		return <div className="error">
+		<Header />
+		<div className="error_infos">
+		 <h1 className="error_infos_title">404</h1>
+		 <p className="error_infos_content">La page que vous avez demandé n'existe pas</p>
+		<Link to={`/accueil`}>
+			<p className="error_infos_lien">Retourner sur la page d'accueil</p>
+		</Link>
+		</div>
+		</div>
 	}
-	useEffect(() => {
-		const dataCurrentAppartement = datas.filter(data => data.id === idAppartement);
-		setImageSlider(dataCurrentAppartement[0].pictures);
-	}, [idAppartement]);
-	const name = dataCurrentAppartement[0].host.name.split(' '); 
-	const rating = dataCurrentAppartement[0].rating;
+	else {
+	const name = dataCurrentAppartement !== undefined? dataCurrentAppartement[0].host.name.split(' ') :''; 
 	const description  = dataCurrentAppartement[0].description;
 	const equipments = dataCurrentAppartement[0].equipments;
-
 	return (
+
 		<>
 			<Header/>
-			<Carousel imageSlider={imageSlider}/>
+			<Carousel imageSlider={dataCurrentAppartement[0].pictures}/>
 			<main className="appartement">
 				<div className="appartement_content">
 					<div className="appartement_content_infos">
@@ -72,5 +76,6 @@ export default function PageAppartement() {
 			<Footer/>
 		</>
 	)
+}
 }
 

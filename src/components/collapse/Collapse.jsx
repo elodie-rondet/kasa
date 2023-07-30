@@ -19,7 +19,7 @@ export default function Collapse({title, content}) {
                         alt="show content" 
                     />
                 </h3>
-                <div className={toggle && location.pathname !== '/Apropos' ? 'collapse_content' : location.pathname === '/Apropos' && toggle ? 'collapse_content_apropos' : 'collapse_content_hidden'}>
+                <div className={toggle && location.pathname !== '/apropos' ? 'collapse_content' : location.pathname === '/apropos' && toggle ? 'collapse_content_apropos' : 'collapse_content_hidden'}>
                     {Array.isArray(content) ? content.map((item, index) => {
                         return (
                             <p key={index}>{item}</p>

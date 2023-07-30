@@ -10,6 +10,7 @@ export default function Navbar() {
             <ul className='nav_list'>
                 <li className={currentRoute === '/accueil/' ? 'nav_list_item_active' : 'nav_list_item'}>
                     <Link  to='/accueil/'>
+                   
                         Accueil
                     </Link>
                 </li>

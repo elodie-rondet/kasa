@@ -12,7 +12,7 @@
     max-width: 95%;
     margin: 43px;
     @include center (auto,auto);
-    @media screen and (max-width: 550px){
+    @media all and (max-width: 550px){
         @include center (auto,auto);
         margin: 20px;
         height: 120px;
@@ -28,7 +28,7 @@
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../images/banniere_cover.png');
         background-position: center;
         background-size: cover;
-        @media screen and (max-width: 550px){
+        @media all and (max-width: 550px){
             margin: 20px auto;
             height: 120px;
         }
