@@ -47,7 +47,7 @@
         letter-spacing: 1px;
         visibility: visible;
         opacity: 1;
-        height: auto;
+        height: 200px;
         padding: 10px;
         letter-spacing: 1px;
         font-size: clamp(12px, 2vw, 16px);
@@ -75,6 +75,9 @@
         transition: visibility 0.5s ease-in-out,
                     opacity 0.5s ease-in-out,
                     height 0.2s ease-in-out;
+        @media all and (max-width: 1024px){ 
+            height: auto;         
+            }  
     }
     &_content_hidden{
         visibility: hidden;
