@@ -19,6 +19,7 @@ export default function Slider({imageSlider}) {
             setCurrentIndex(imageSlider.length - 1)
     }
 
+
     return (
         <section style={{backgroundImage : `url(${imageSlider[currentIndex]})`}} className='carousel'>
             {imageSlider.length > 1 && 
