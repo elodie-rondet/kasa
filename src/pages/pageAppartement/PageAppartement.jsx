@@ -1,6 +1,5 @@
 import './pageAppartementcss.scss'
-import { useEffect, useState } from "react"
-import { useParams, user } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import datas from '../../data/datas'
 import Header from "../../components/header/Header";
 import Carousel from "../../components/carousel/Carousel"

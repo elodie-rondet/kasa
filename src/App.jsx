@@ -25,6 +25,10 @@ const router = createBrowserRouter([
 		path: "/",
 		element: <Accueil />
 	},
+	{
+		path: "/kasa",
+		element: <Accueil />
+	},
 	
 
 ]);
