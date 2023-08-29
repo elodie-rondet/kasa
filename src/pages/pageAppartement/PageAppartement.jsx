@@ -1,5 +1,6 @@
 import './pageAppartementcss.scss'
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { useParams, user } from "react-router-dom";
 import datas from '../../data/datas'
 import Header from "../../components/header/Header";
 import Carousel from "../../components/carousel/Carousel"
@@ -36,7 +37,7 @@ export default function PageAppartement() {
 
 		<>
 			<Header/>
-			<Carousel imageSlider={dataCurrentAppartement[0].pictures} />
+			<Carousel imageSlider={dataCurrentAppartement[0].pictures}/>
 			<main className="appartement">
 				<div className="appartement_content">
 					<div className="appartement_content_infos">
@@ -78,4 +79,3 @@ export default function PageAppartement() {
 	)
 }
 }
-
